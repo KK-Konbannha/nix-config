@@ -12,11 +12,14 @@
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
+  programs.zsh.enable = true;
+
   users.users.alice = {
     isNormalUser = true;
     extraGroups = ["wheel"];
     initialPassword = "test";
   };
+  users.users.alice.shell = pkgs.zsh;
 
   environment.systemPackages = with pkgs; [
     git
