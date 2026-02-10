@@ -18,26 +18,11 @@
     isNormalUser = true;
     extraGroups = ["wheel"];
     initialPassword = "test";
+    shell = pkgs.zsh;
   };
-  users.users.alice.shell = pkgs.zsh;
 
   environment.systemPackages = with pkgs; [
     git
-    neovim
-    curl
-    tree
-    ripgrep
-    fd
-    bat
-    fzf
-    yazi
-    btop
-    lsd
-    zoxide
-    unzip
-    fastfetch
-    jq
-    termshark
   ];
 
   system.stateVersion = "24.05";
