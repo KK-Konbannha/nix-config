@@ -13,7 +13,7 @@
   outputs = { self, nixpkgs, home-manager, ... }:
   let
     system = "x86_64-linux";
-    username = "alice";
+    username = "kk";
   in
   {
     nixosConfigurations.vm = nixpkgs.lib.nixosSystem {
