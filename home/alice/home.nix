@@ -26,6 +26,7 @@
     waybar
     rofi
     firefox
+    baobab
   ];
 
   xdg.userDirs = {
