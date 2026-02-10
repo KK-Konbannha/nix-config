@@ -33,5 +33,11 @@
 
   ];
 
+  programs.hyprland = {
+    enable = true;
+    withUWSM = true;
+    xwayland.enable = true;
+  };
+
   system.stateVersion = "24.05";
 }

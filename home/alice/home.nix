@@ -21,6 +21,8 @@
     jq
     termshark
     sheldon
+
+    wezterm
   ];
 
   xdg.userDirs = {
@@ -49,7 +51,33 @@
       source = ../../dotfiles/.config/sheldon;
       recursive = true;
     };
+    "hypr" = {
+      source = ../../dotfiles/.config/hypr;
+      recursive = true;
+    };
+    "waybar" = {
+      source = ../../dotfiles/.config/waybar;
+      recursive = true;
+    };
+    "fontconfig" = {
+      source = ../../dotfiles/.config/fontconfig;
+      recursive = true;
+    };
+    "libskk" = {
+      source = ../../dotfiles/.config/libskk;
+      recursive = true;
+    };
+    "wezterm" = {
+      source = ../../dotfiles/.config/wezterm;
+      recursive = true;
+    };
+    "rofi" = {
+      source = ../../dotfiles/.config/rofi;
+      recursive = true;
+    };
   };
 
   home.file.".zshenv".source = ../../dotfiles/.zshenv;
+
+  wayland.windowManager.hyprland.systemd.enable = false;
 }
