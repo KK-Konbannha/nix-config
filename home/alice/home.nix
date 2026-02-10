@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
 
 {
   home.username = "alice";
@@ -23,9 +23,33 @@
     sheldon
   ];
 
-  home.file.".config/nvim".source = ../../dotfiles/.config/nvim;
-  home.file.".config/zsh".source = ../../dotfiles/.config/zsh;
-  home.file.".config/sheldon".source = ../../dotfiles/.config/sheldon;
+  xdg.userDirs = {
+    enable = true;
+    createDirectories = true;
+    videos = null;
+    templates = null;
+    publicShare = null;
+    pictures = "${config.home.homeDirectory}/Pictures";
+    music = "${config.home.homeDirectory}/Music";
+    download = "${config.home.homeDirectory}/Downloads";
+    documents = "${config.home.homeDirectory}/Documents";
+    desktop = null;
+  };
+
+  xdg.configFile = {
+    "nvim" = {
+      source = ../../dotfiles/.config/nvim;
+      recursive = true;
+    };
+    "zsh" = {
+      source = ../../dotfiles/.config/zsh;
+      recursive = true;
+    };
+    "sheldon" = {
+      source = ../../dotfiles/.config/sheldon;
+      recursive = true;
+    };
+  };
 
   home.file.".zshenv".source = ../../dotfiles/.zshenv;
 }

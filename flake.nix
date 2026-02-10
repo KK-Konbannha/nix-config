@@ -18,7 +18,9 @@
   {
     nixosConfigurations.vm = nixpkgs.lib.nixosSystem {
       inherit system;
-      specialArgs = {inherit username;};
+      specialArgs = {
+        inherit username;
+      };
 
       modules = [
         ./hosts/vm/configuration.nix

@@ -9,6 +9,8 @@
   i18n.defaultLocale = "ja_JP.UTF-8";
 
   services.openssh.enable = true;
+  virtualisation.docker.enable = true;
+  networking.networkmanager.enable = true;
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
@@ -16,7 +18,7 @@
 
   users.users.${username} = {
     isNormalUser = true;
-    extraGroups = ["wheel"];
+    extraGroups = ["wheel" "docker" "networkmanager"];
     initialPassword = "test";
     shell = pkgs.zsh;
   };
