@@ -23,6 +23,21 @@
 
   environment.systemPackages = with pkgs; [
     git
+    neovim
+    curl
+    tree
+    ripgrep
+    fd
+    bat
+    fzf
+    yazi
+    btop
+    lsd
+    zoxide
+    unzip
+    fastfetch
+    jq
+    termshark
   ];
 
   system.stateVersion = "24.05";
