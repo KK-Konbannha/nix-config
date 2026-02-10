@@ -6,8 +6,8 @@ setopt transient_rprompt
 # 関数 "{{{
 # ---------------------------------------------------------------------
 function lprompt-icon {
-    dirInt=$(python -c "import sys;x = sys.argv[1].split('/');print(4 if x == ['',''] else (len(x)-1)%4)" $(pwd))
-    randInt=$(python -c "import random;print(str(random.randint(44, 49)).zfill(3));")
+    dirInt=$([[ $PWD == / ]] && echo 4 || echo $(( (${#${PWD//[^\/]/}}) % 4 )))
+    randInt=$(printf "%03d" $(( RANDOM % 6 + 44 )))
     echo -n "%F{$randInt}"
     if [ $dirInt -eq 4 ]; then
         echo -n " "

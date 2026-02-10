@@ -26,8 +26,8 @@
   ];
 
   # home.file.".config/nvim".source = ../dotfiles/.config/nvim;
-  home.file.".config/zsh".source = ../dotfiles/.config/zsh;
-  home.file.".config/sheldon".source = ../dotfiles/.config/sheldon;
+  home.file.".config/zsh".source = ../../dotfiles/.config/zsh;
+  home.file.".config/sheldon".source = ../../dotfiles/.config/sheldon;
 
-  home.file.".zshenv".source = ../dotfiles/.zshenv;
+  home.file.".zshenv".source = ../../dotfiles/.zshenv;
 }
