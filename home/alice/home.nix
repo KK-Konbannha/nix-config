@@ -23,6 +23,8 @@
     sheldon
 
     wezterm
+    waybar
+    rofi
   ];
 
   xdg.userDirs = {
@@ -61,6 +63,10 @@
     };
     "fontconfig" = {
       source = ../../dotfiles/.config/fontconfig;
+      recursive = true;
+    };
+    "fcitx5" = {
+      source = ../../dotfiles/.config/fcitx5;
       recursive = true;
     };
     "libskk" = {
