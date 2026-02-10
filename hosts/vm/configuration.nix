@@ -1,4 +1,4 @@
-{ config, pkgs, ...}:
+{ config, pkgs, username, ...}:
 
 {
   boot.loader.systemd-boot.enable = true;
@@ -14,7 +14,7 @@
 
   programs.zsh.enable = true;
 
-  users.users.alice = {
+  users.users.${username} = {
     isNormalUser = true;
     extraGroups = ["wheel"];
     initialPassword = "test";

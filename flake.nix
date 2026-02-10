@@ -13,10 +13,13 @@
   outputs = { self, nixpkgs, home-manager, ... }:
   let
     system = "x86_64-linux";
+    username = "alice";
   in
   {
     nixosConfigurations.vm = nixpkgs.lib.nixosSystem {
       inherit system;
+      specialArgs = {inherit username;};
+
       modules = [
         ./hosts/vm/configuration.nix
 
@@ -26,7 +29,7 @@
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
 
-          home-manager.users.alice = import ./home/alice/home.nix;
+          home-manager.users.${username} = import ./home/${username}/home.nix;
         }
       ];
     };
