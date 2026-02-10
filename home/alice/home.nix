@@ -3,7 +3,7 @@
 {
   home.username = "alice";
   home.homeDirectory = "/home/alice";
-  home.stateVersion = "24.05";
+  home.stateVersion = "25.11";
 
   home.packages = with pkgs; [
     git
@@ -22,5 +22,12 @@
     fastfetch
     jq
     termshark
+    sheldon
   ];
+
+  # home.file.".config/nvim".source = ../dotfiles/.config/nvim;
+  home.file.".config/zsh".source = ../dotfiles/.config/zsh;
+  home.file.".config/sheldon".source = ../dotfiles/.config/sheldon;
+
+  home.file.".zshenv".source = ../dotfiles/.zshenv;
 }
