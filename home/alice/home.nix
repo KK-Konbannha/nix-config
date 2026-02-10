@@ -25,6 +25,7 @@
     wezterm
     waybar
     rofi
+    firefox
   ];
 
   xdg.userDirs = {
